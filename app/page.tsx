@@ -1,13 +1,13 @@
 import React from 'react';
 
 const srcDoc: string = `<!DOCTYPE html>
-<html style="height: 100%;">
+<html style="height: 100%; overflow-y: auto;">
     <head>
         <title>Burberry Web Page</title>
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
         <style>
             body, html {
-                height: 100%;
+                height: 100vh;
                 margin: 0;
                 overflow-y: auto;
             }
@@ -31,7 +31,7 @@ const srcDoc: string = `<!DOCTYPE html>
             }
         </style>
     </head>
-    <body class="bg-gray-200" style="height: 100%;">
+    <body class="bg-gray-200" style="height: 100%; overflow-y: auto;">
         <div id="root">
             <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg">
                 <header class="w-full p-4 bg-white flex justify-center items-center shadow-md">
