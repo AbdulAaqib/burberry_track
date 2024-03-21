@@ -2,7 +2,6 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <html>
     <head>
         <title>Burberry Web Page</title>
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
@@ -71,6 +70,5 @@ export default function Home() {
             document.getElementById('blockchainID').textContent = '00000x';
         </script>
     </body>
-</html>;
   );
 }
