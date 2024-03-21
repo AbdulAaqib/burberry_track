@@ -34,7 +34,7 @@ export default function Home() {
       </head>
       <body class="bg-gray-200">
         <header class="w-full p-4 bg-white flex justify-center items-center shadow-md">
-          <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Burberry_Logo.svg/618px-Burberry_Logo.svg.png" alt="Burberry Logo" width={100} height={100} />
+          <Image src="../app/track.png" alt="Burberry Logo" width={100} height={100} />
         </header>
         <section id="full-height-section">
           <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg m-3">
