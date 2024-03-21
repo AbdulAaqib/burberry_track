@@ -2,13 +2,13 @@ import Image from "next/image";
 
 export default function Home() {
   const srcDoc = `<!DOCTYPE html>
-    <html>
+    <html style="height: 100%;">
       <head>
         <title>Burberry Web Page</title>
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
         <style>
-          body {
-            font-family: Arial, sans-serif;
+          body, html {
+            height: 100%;
             margin: 0;
             padding: 0;
           }
@@ -34,7 +34,7 @@ export default function Home() {
       </head>
       <body class="bg-gray-200">
         <header class="w-full p-4 bg-white flex justify-center items-center shadow-md">
-          <Image className="h-10" src="../app/track.png" alt="Burberry Logo" width={100} height={100} />
+          <Image className="h-10" src="https://source.unsplash.com/random/?burberry" alt="Burberry Logo" width={100} height={100} />
         </header>
         <section id="full-height-section">
           <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg m-3">
