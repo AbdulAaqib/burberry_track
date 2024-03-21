@@ -8,7 +8,7 @@ const srcDoc: string = `<!DOCTYPE html>
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
         <style>
             body, html {
-                height: 100vh;
+                height: 100%;
                 margin: 0;
                 overflow-y: auto;
             }
@@ -32,7 +32,7 @@ const srcDoc: string = `<!DOCTYPE html>
             }
         </style>
     </head>
-    <body class="bg-gray-200" style="height: 100%; overflow-y: auto;">
+    <body style="margin: 0; padding: 0;">
         <div id="root">
             <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg">
                 <header class="w-full p-4 bg-white flex justify-center items-center shadow-md">
