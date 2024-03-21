@@ -86,5 +86,5 @@ export default function Home() {
       </body>
     </html>`;
 
-  return <iframe style={{ width: "100%", height: "200%", border: "none" }} srcDoc={srcDoc} />;
+  return <iframe style={{ width: "100%", height: "100vh", border: "none" }} srcDoc={srcDoc} />;
 }
