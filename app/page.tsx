@@ -1,7 +1,7 @@
 import React from 'react';
 
 const srcDoc: string = `<!DOCTYPE html>
-<html>
+<html style="height: 100%;">
     <head>
         <title>Burberry Web Page</title>
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
@@ -9,7 +9,7 @@ const srcDoc: string = `<!DOCTYPE html>
             body, html {
                 height: 100%;
                 margin: 0;
-                overflow-y: auto; /* Apply scrollbar to the whole screen */
+                overflow-y: auto;
             }
             #root {
                 display: flex;
@@ -31,7 +31,7 @@ const srcDoc: string = `<!DOCTYPE html>
             }
         </style>
     </head>
-    <body class="bg-gray-200">
+    <body class="bg-gray-200" style="height: 100%;">
         <div id="root">
             <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg">
                 <header class="w-full p-4 bg-white flex justify-center items-center shadow-md">
