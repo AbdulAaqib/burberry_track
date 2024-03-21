@@ -58,6 +58,7 @@ export default function Home() {
                   <tbody id="productDetails"></tbody>
                 </table>
                 <p class="text-gray-700 text-sm mt-2">Materials listed are in order of sourcing date</p>
+                <p id="blockchainID" class="text-gray-900 font-bold text-xl">BlockchainID:1s4f5F5x</p>
               </div>
             </div>
             <div class="p-4">
@@ -85,7 +86,7 @@ export default function Home() {
             cell2.textContent = info.country;
             cell3.textContent = info.dateSourced;
           });
-          document.getElementById('blockchainID').textContent = 'BlockchainID:1s4f5F5x';
+          document.getElementById('blockchainID').textContent = '';
         </script>
       </body>
     </html>`;
