@@ -22,19 +22,19 @@ export default function Home() {
             width: 80%;
             max-width: 800px;
             height: 80%;
-            max-height: 80vh; /* Adjusted height to increase scrollbar */
+            max-height: 600px;
             display: flex;
             flex-direction: column;
-            overflow-y: auto; /* Added to show scrollbar when content exceeds height */
           }
           .product-content {
             flex: 1;
+            overflow-y: auto;
           }
         </style>
       </head>
       <body class="bg-gray-200">
         <header class="w-full p-4 bg-white flex justify-center items-center shadow-md">
-          <Image className="h-10" src="" alt="Burberry Logo" width={100} height={100} />
+          <Image className="h-10" src="https://source.unsplash.com/random/?burberry" alt="Burberry Logo" width={100} height={100} />
         </header>
         <section id="full-height-section">
           <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg m-3">
