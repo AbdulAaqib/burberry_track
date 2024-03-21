@@ -57,12 +57,10 @@ export default function Home() {
                   </thead>
                   <tbody id="productDetails"></tbody>
                 </table>
-                <p class="text-gray-700 text-sm mt-2">Materials listed are in order of sourcing date</p>
+                <p class="text-gray-700 text-sm mt-2 mb-4">Materials listed are in order of sourcing date</p>
+                <p class="text-gray-700 text-base">Blockchain Product ID:</p>
+                <p id="blockchainID" class="text-gray-900 font-bold text-xl"></p>
               </div>
-            </div>
-            <div class="p-4">
-              <p class="text-gray-700 text-base">Blockchain Product ID:</p>
-              <p id="blockchainID" class="text-gray-900 font-bold text-xl"></p>
             </div>
           </div>
         </section>
