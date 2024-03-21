@@ -8,9 +8,8 @@ const srcDoc: string = `<!DOCTYPE html>
         <style>
             body {
                 font-family: Arial, sans-serif;
-            }
-            #full-height-section {
-                height: calc(100vh - 3rem); 
+                height: 100vh;
+                margin: 0;
             }
             .product-card {
                 width: 100%; 
@@ -21,7 +20,7 @@ const srcDoc: string = `<!DOCTYPE html>
         <header class="w-full p-4 bg-white flex justify-center items-center shadow-md">
             <img id="logo" class="h-10" src="https://source.unsplash.com/random/?burberry" />
         </header>
-        <section class="flex items-center justify-center" id="full-height-section">
+        <section class="flex items-center justify-center h-full">
             <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg m-3">
                 <div class="flex overflow-hidden">
                     <div id="productImage" class="w-1/2 bg-cover"></div>
@@ -73,7 +72,7 @@ const srcDoc: string = `<!DOCTYPE html>
 </html>`;
 
 const Home: React.FC = () => {
-  return <iframe style={{ width: "100%", height: "100%" }} srcDoc={srcDoc} />;
+  return <iframe style={{ width: "100%", height: "100%", border: "none" }} srcDoc={srcDoc} />;
 }
 
 export default Home;
