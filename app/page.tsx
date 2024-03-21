@@ -73,9 +73,9 @@ export default function Home() {
         <script>
           document.getElementById('productImage').style.backgroundImage = 'url()';
           const productInfo = [
-            { materials : 'Cotton', country: 'USA 🇺🇸', dateSourced: '01/01/2021' },
-            { materials: 'Wool', country: 'Australia 🇦🇺', dateSourced: '02/02/2021' },
-            { materials: 'Polyester', country: 'China 🇨🇳', dateSourced: '03/03/2021' }
+            { materials : 'Cotton', country: 'USA &#x1F1FA;&#x1F1F8;', dateSourced: '01/01/2021' },
+            { materials: 'Wool', country: 'Australia  &#x1F1E6;&#x1F1FA;', dateSourced: '02/02/2021' },
+            { materials: 'Polyester', country: 'China  &#x1F1E8;&#x1F1F3;', dateSourced: '03/03/2021' }
           ];
           const detailsTable = document.getElementById('productDetails');
 
