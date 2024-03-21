@@ -5,6 +5,7 @@ export default function Home() {
     <html style="height: 100%;">
       <head>
         <title>Burberry Web Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
         <style>
           body, html {
@@ -19,7 +20,7 @@ export default function Home() {
             justify-content: center;
           }
           .product-card {
-            width: 80%;
+            width: 90%; /* Adjusted width for smaller screens */
             max-width: 800px;
             height: 80%;
             max-height: 600px;
@@ -30,14 +31,8 @@ export default function Home() {
             flex: 1;
             overflow-y: auto;
           }
-
-          /* Responsive styles */
-          @media screen and (max-width: 768px) {
-            .product-card {
-              width: 90%;
-            }
-          }
-          @media screen and (max-width: 480px) {
+          /* Adjusted styles for smaller screens */
+          @media (max-width: 768px) {
             .product-card {
               width: 95%;
             }
@@ -50,8 +45,8 @@ export default function Home() {
         </header>
         <section id="full-height-section">
           <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg m-3">
-            <div class="flex overflow-hidden">
-              <div id="productImage" class="w-full md:w-1/2 bg-cover"></div>
+            <div class="flex flex-col md:flex-row overflow-hidden"> <!-- Adjusted to column layout for smaller screens -->
+              <div id="productImage" class="w-full md:w-1/2 bg-cover h-64 md:h-auto"></div> <!-- Adjusted width and height -->
               <div class="w-full md:w-1/2 p-4">
                 <h1 class="text-gray-900 font-bold text-3xl mb-1">Short Check Collar Gabardine Trench Coat</h1>
                 <p class="text-gray-700 text-base">Product Details:</p>
@@ -75,4 +70,28 @@ export default function Home() {
           </div>
         </section>
         <script>
-          document.getElementById('productImage').style.backgroundImage = 'url(https://lh3.googleusercontent.com/fife/ALs6j_FoJ7RnTXAl97yP-ppUD2Fufweh1jQJsvbprSx-vV2z18_eEOsmgMYVo3ssqj0e3NaMDKW1oXPDBZPxmfIP6RkxhUVtvTMKKJXb4HJUJqOWFGm-u0iftFZSr7xphXdVRRqza0NCk1s4qiPNlw
+          document.getElementById('productImage').style.backgroundImage = 'url(https://lh3.googleusercontent.com/fife/ALs6j_FoJ7RnTXAl97yP-ppUD2Fufweh1jQJsvbprSx-vV2z18_eEOsmgMYVo3ssqj0e3NaMDKW1oXPDBZPxmfIP6RkxhUVtvTMKKJXb4HJUJqOWFGm-u0iftFZSr7xphXdVRRqza0NCk1s4qiPNlwUCUSplr4QWXikTxaJGXiuql04DSdjHZ9NwEI759sMNhA-8C60H2gOokKlU3V4xyKkvgDJm5DUhl79xwi-n4KK32DLImfpvV4cESOdH-KJv_RsSedf_UlobXVQMkv-TIkqQOIVF4uYFAxdjCkboKXNVJvBXTUhS1xWOcCkaDyqak6xzRS2rbQja7x3pGNJS4VpZ_G96R_mlO2PyS9fHLHMUcdAJ_IAn6wVeIF8lcDw-3aQNPdlY5sYTAIJb34teKVzZWQ2d3nH3c2V5NESv5Gp8s3MXY5MUmrM-BAW3R_51tgiA8TusKmJkkz-__OWZWSSLAZKBMHiDfocOPkRi9BmFwNc3iprtqC95NXyg8aNyX_uUAS4v7Ywk9z_DTVc3owlAG7i4qbbJTD4-bnu5pwdOA0fT9nVU8LCW8mDv56P01158VUhL4Gc6VNzNN8Z-g-ZGReMBerUCdZIDM_qtm5PXb-6cMd1fk_X-bHyPQX3oOEuJUPg8ygjksJqWPRtIlaMCmfxznuSxDOofUalL3lYs55Ddohq2IjKSOcGfs6IRRZorHfgrjBVkG6zg9TK1d9EFgRFbqTLXrjXZ8RH8ANsTHfGcSp7UtEky4Xnf_kxYth7ZV8dCBemhELUctfg1Q06hel3SsfPl_KXEyTeMbM0ASrjFZgbEQP8exD_B79pvDJSd6YHsWt50Vj34YEqpRqD3RypXLgsFDhk-Le10i9XWCiQxxHs4rUtm1fxZ-BDFiK4r8zFGUpg4HLY7zUiT37NiYFUzFgawM0Cnzzqk3eqbStCuJOfwMD9_g5C5Np5G7-wgp-WiXbd6cAXx7wlgWEcJjDdsfYE5rnLxvqTMvRM=w1920-h863)';
+          const productInfo = [
+            { materials: 'Cotton', country: 'USA', dateSourced: '01/01/2021' },
+            { materials: 'Wool', country: 'Australia', dateSourced: '02/02/2021' },
+            { materials: 'Polyester', country: 'China', dateSourced: '03/03/2021' }
+          ];
+          const detailsTable = document.getElementById('productDetails');
+
+          productInfo.forEach(info => {
+            const row = detailsTable.insertRow();
+            const cell1 = row.insertCell();
+            const cell2 = row.insertCell();
+            const cell3 = row.insertCell();
+
+            cell1.textContent = info.materials;
+            cell2.textContent = info.country;
+            cell3.textContent = info.dateSourced;
+          });
+          document.getElementById('blockchainID').textContent = '1s4f5F5x';
+        </script>
+      </body>
+    </html>`;
+
+  return <iframe style={{ width: "100%", height: "100vh", border: "none" }} srcDoc={srcDoc} />;
+}
