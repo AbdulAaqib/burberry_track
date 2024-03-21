@@ -12,7 +12,12 @@ const srcDoc: string = `<!DOCTYPE html>
                 margin: 0;
             }
             .product-card {
-                width: 100%; 
+                width: 100%;
+                height: 100%; /* Ensure the product card fills the entire screen */
+            }
+            .product-content {
+                height: calc(100% - 4rem); /* Adjust the height of the product content to fit properly */
+                overflow-y: auto; /* Add overflow for scrolling if needed */
             }
         </style>
     </head>
@@ -22,28 +27,30 @@ const srcDoc: string = `<!DOCTYPE html>
         </header>
         <section class="flex items-center justify-center h-full">
             <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg m-3">
-                <div class="flex overflow-hidden">
-                    <div id="productImage" class="w-1/2 bg-cover"></div>
-                    <div class="w-1/2 p-4">
-                        <h1 class="text-gray-900 font-bold text-3xl mb-1">Product Name</h1>
-                        <p class="text-gray-700 text-base">Product Details:</p>
-                        <table class="table-auto w-full">
-                            <thead>
-                                <tr>
-                                    <th class="px-4 py-2">Materials</th>
-                                    <th class="px-4 py-2">Country of Origin</th>
-                                    <th class="px-4 py-2">Date Sourced</th>
-                                </tr>
-                            </thead>
-                            <tbody id="productDetails">
-                            </tbody>
-                        </table>
-                        <p class="text-gray-700 text-sm mt-2">Materials listed are in order of sourcing date</p>
+                <div class="product-content">
+                    <div class="flex overflow-hidden">
+                        <div id="productImage" class="w-1/2 bg-cover"></div>
+                        <div class="w-1/2 p-4">
+                            <h1 class="text-gray-900 font-bold text-3xl mb-1">Product Name</h1>
+                            <p class="text-gray-700 text-base">Product Details:</p>
+                            <table class="table-auto w-full">
+                                <thead>
+                                    <tr>
+                                        <th class="px-4 py-2">Materials</th>
+                                        <th class="px-4 py-2">Country of Origin</th>
+                                        <th class="px-4 py-2">Date Sourced</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="productDetails">
+                                </tbody>
+                            </table>
+                            <p class="text-gray-700 text-sm mt-2">Materials listed are in order of sourcing date</p>
+                        </div>
                     </div>
-                </div>
-                <div class="p-4">
-                    <p class="text-gray-700 text-base">Blockchain Product ID:</p>
-                    <p id="blockchainID" class="text-gray-900 font-bold text-xl"></p>
+                    <div class="p-4">
+                        <p class="text-gray-700 text-base">Blockchain Product ID:</p>
+                        <p id="blockchainID" class="text-gray-900 font-bold text-xl"></p>
+                    </div>
                 </div>
             </div>
         </section>
