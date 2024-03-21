@@ -61,7 +61,7 @@ export default function Home() {
               </div>
             </div>
             <div class="p-4">
-              <p class="text-gray-700 text-base">Blockchain Product ID:</p>
+              <p class="text-gray-700 text-base"></p>
               <p id="blockchainID" class="text-gray-900 font-bold text-xl"></p>
             </div>
           </div>
