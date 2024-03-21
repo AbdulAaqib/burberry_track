@@ -6,34 +6,38 @@ const srcDoc: string = `<!DOCTYPE html>
         <title>Burberry Web Page</title>
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
         <style>
-            body {
-                font-family: Arial, sans-serif;
-                height: 100vh;
+            body, html {
+                height: 100%;
                 margin: 0;
+                overflow-y: auto; /* Apply scrollbar to the whole screen */
             }
-            .product-card {
-                width: 100%;
+            #root {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 height: 100%;
             }
+            .product-card {
+                width: 80%;
+                max-width: 800px;
+                height: 80%;
+                max-height: 600px;
+                display: flex;
+                flex-direction: column;
+            }
             .product-content {
-                height: calc(100% - 4rem);
+                flex: 1;
                 overflow-y: auto;
             }
         </style>
     </head>
     <body class="bg-gray-200">
-        <header class="w-full p-4 bg-white flex justify-center items-center shadow-md">
-            <img id="logo" class="h-10" src="https://source.unsplash.com/random/?burberry" />
-        </header>
-        <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-            <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-                Get started by editing&nbsp;
-                <code className="font-mono font-bold">app/page.tsx</code>
-            </p>
-        </div>
-        <section class="flex items-center justify-center h-full">
-            <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg m-3">
-                <div class="product-content">
+        <div id="root">
+            <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg">
+                <header class="w-full p-4 bg-white flex justify-center items-center shadow-md">
+                    <img id="logo" class="h-10" src="https://source.unsplash.com/random/?burberry" />
+                </header>
+                <section class="product-content">
                     <div class="flex overflow-hidden">
                         <div id="productImage" class="w-1/2 bg-cover"></div>
                         <div class="w-1/2 p-4">
@@ -57,9 +61,9 @@ const srcDoc: string = `<!DOCTYPE html>
                         <p class="text-gray-700 text-base">Blockchain Product ID:</p>
                         <p id="blockchainID" class="text-gray-900 font-bold text-xl"></p>
                     </div>
-                </div>
+                </section>
             </div>
-        </section>
+        </div>
         <script>
             document.getElementById('productImage').style.backgroundImage = 'url(https://source.unsplash.com/random)';
             const productInfo = [
@@ -85,12 +89,7 @@ const srcDoc: string = `<!DOCTYPE html>
 </html>`;
 
 const Home: React.FC = () => {
-  return (
-    <iframe
-      style={{ width: "100%", height: "100%", border: "none" }}
-      srcDoc={srcDoc}
-    />
-  );
+  return <iframe style={{ width: "100%", height: "100%", border: "none" }} srcDoc={srcDoc} />;
 }
 
 export default Home;
