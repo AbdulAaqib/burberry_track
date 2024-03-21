@@ -1,26 +1,6 @@
-import { useClient } from 'next/amp';
-import { useEffect, useRef, useState } from 'react';
+import Image from "next/image";
 
 export default function Home() {
-  const client = useClient();
-  
-  if (!client) {
-    return null; // Render nothing on the server-side
-  }
-
-  const [iframeHeight, setIframeHeight] = useState(0);
-  const iframeRef = useRef(null);
-
-  useEffect(() => {
-    if (iframeRef.current) {
-      const { contentDocument } = iframeRef.current;
-      if (contentDocument) {
-        const bodyHeight = contentDocument.body.scrollHeight;
-        setIframeHeight(bodyHeight);
-      }
-    }
-  }, []);
-
   const srcDoc = `<!DOCTYPE html>
     <html style="height: 100%;">
       <head>
@@ -41,8 +21,11 @@ export default function Home() {
           .product-card {
             width: 80%;
             max-width: 800px;
+            height: 80%;
+            max-height: 80vh; /* Adjusted height to increase scrollbar */
             display: flex;
             flex-direction: column;
+            overflow-y: auto; /* Added to show scrollbar when content exceeds height */
           }
           .product-content {
             flex: 1;
@@ -51,7 +34,7 @@ export default function Home() {
       </head>
       <body class="bg-gray-200">
         <header class="w-full p-4 bg-white flex justify-center items-center shadow-md">
-          <img class="h-10" src="https://source.unsplash.com/random/?burberry" alt="Burberry Logo" width={100} height={100} />
+          <Image className="h-10" src="" alt="Burberry Logo" width={100} height={100} />
         </header>
         <section id="full-height-section">
           <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg m-3">
@@ -103,4 +86,5 @@ export default function Home() {
       </body>
     </html>`;
 
-  return <iframe ref={iframeRef} style={{ width: "100%", height: `${iframeHeight}px`, border: "none" }} srcDoc={srcDoc} />;
+  return <iframe style={{ width: "100%", height: "100%", border: "none" }} srcDoc={srcDoc} />;
+}
