@@ -22,13 +22,13 @@ export default function Home() {
             width: 80%;
             max-width: 800px;
             height: 80%;
-            max-height: 600px;
+            max-height: 80vh; /* Adjusted height to increase scrollbar */
             display: flex;
             flex-direction: column;
+            overflow-y: auto; /* Added to show scrollbar when content exceeds height */
           }
           .product-content {
             flex: 1;
-            overflow-y: auto;
           }
         </style>
       </head>
