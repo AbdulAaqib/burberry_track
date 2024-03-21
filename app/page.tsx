@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from 'react';
 
 const srcDoc: string = `<!DOCTYPE html>
@@ -8,7 +7,7 @@ const srcDoc: string = `<!DOCTYPE html>
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
         <style>
             body, html {
-                height: 100%;
+                height: 100vh;
                 margin: 0;
                 overflow-y: auto;
             }
@@ -32,7 +31,7 @@ const srcDoc: string = `<!DOCTYPE html>
             }
         </style>
     </head>
-    <body style="margin: 0; padding: 0;">
+    <body class="bg-gray-200" style="height: 100%; overflow-y: auto;">
         <div id="root">
             <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg">
                 <header class="w-full p-4 bg-white flex justify-center items-center shadow-md">
@@ -92,9 +91,7 @@ const srcDoc: string = `<!DOCTYPE html>
 const Home: React.FC = () => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <div dangerouslySetInnerHTML={{ __html: srcDoc }} />
-      </div>
+      <iframe style={{ width: "100%", height: "100%", border: "none" }} srcDoc={srcDoc} />
     </main>
   );
 }
