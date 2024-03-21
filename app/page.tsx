@@ -1,10 +1,8 @@
-import Image from "next/image";
+import React from 'react';
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-      <head>
+const srcDoc: string = `<!DOCTYPE html>
+<html>
+    <head>
         <title>Burberry Web Page</title>
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
         <style>
@@ -72,7 +70,10 @@ export default function Home() {
             document.getElementById('blockchainID').textContent = '00000x';
         </script>
     </body>
-      </div>
-    </main>
-  );
+</html>`;
+
+const Home: React.FC = () => {
+  return <iframe style={{ width: "100%", height: "100%" }} srcDoc={srcDoc} />;
 }
+
+export default Home;
