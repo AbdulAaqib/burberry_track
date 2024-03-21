@@ -41,7 +41,7 @@ export default function Home() {
           <Image src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZudmC4uo7JnXvJeSsIwXqODG2IfP37ODdY6oodJ3EnQUBqSnlt1C_PJRJfDKYkE_7zhbSqn2h1TtMrVCLnaDEdOqrO-g=w1920-h863" alt="Burberry Logo" width={50} height={50} />
         </header>
         <div class="w-full flex justify-center items-center mt-4">
-          <Image src="/your-image-path.jpg" alt="Your Image" width={800} height={600} />
+          <Image src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZ5_L5qKsk3baXcNBsNQntgsLZ0nJLreZLP2ZcQKlqXBKoAa3AJSr27SybF92jE0kRZuo35v-h1TkIm9QSR1O2pUAi60g=w1920-h863" alt="Your Image" width={800} height={600} />
         </div>
         <section id="full-height-section">
           <div class="product-card bg-white rounded-lg shadow-lg m-3">
