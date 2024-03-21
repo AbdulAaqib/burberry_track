@@ -1,3 +1,6 @@
+import Image from "next/image";
+import React from 'react';
+
 const ProductCard: React.FC = () => {
   const srcDoc: string = `<!DOCTYPE html>
     <html style="height: 100%; overflow-y: auto;">
