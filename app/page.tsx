@@ -46,7 +46,7 @@ export default function Home() {
               <div id="productImage" class="w-full md:w-1/2 bg-cover bg-center"></div>
               <div class="w-full md:w-1/2 p-4">
                 <h1 class="text-gray-900 font-bold text-2xl md:text-3xl mb-1">Short Check Collar Gabardine Trench Coat</h1>
-                <p class="text-gray-700 text-base">Product Details:</p>
+                <p class="text-gray-700 text-base">Blockchain Product Details:</p>
                 <table class="table-auto w-full">
                   <thead>
                     <tr>
