@@ -11,20 +11,24 @@ export default function Home() {
             height: 100%;
             margin: 0;
             padding: 0;
+            font-size: 16px;
           }
           #full-height-section {
-            min-height: calc(100vh - 4rem);
+            min-height: 100%;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
+            padding: 1rem;
           }
           .product-card {
-            width: 80%;
+            width: 100%;
             max-width: 800px;
-            height: 80%;
+            height: 100%;
             max-height: 600px;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
           }
           .product-content {
             flex: 1;
@@ -37,11 +41,11 @@ export default function Home() {
           <Image src="https://lh3.googleusercontent.com/fife/ALs6j_Hol2Y3jv1Ke2KdpmZd84PcC1p7MomzK8kY3sWTlATjpV3ycNEwbyFmrzPs1GnczLGlq3QiIg6rVvKfSp64HuXyjaKrhcYKd6o-yJpX3dTq31IdcqwWMyPWRr8UYbG7oNyHDm_Zyu1--y-bMI4iRw70yyKPimQ1Dssfmjr52FcGAEpg6izEBWJ-086jl9ALzDcfXDNiUBGf176VaM7NV-ODpimFu2yLS_ZmfSSAdmT15EU2nitPSODIIaMx2QXshLlcPD-VGYmcxtxDjQP_06tdH4sobt6OokznoCyea56ctCoy-BrWumgtQygJfpfVdaZE-KCTnGDOQL02GwgGhLBAoqaOMw8lI3WiRQOV8C1JCMbYceBXN9TAkb-AF97VJb2Qq0wWroJi94z6y_YHRf5--Gkue86kPvNNLuD3T6AGzPSWdcaFOk0m-oKzmrkC46wQaH26XT8VEISZF4dLCkvtqof6_tWC2OejNdNtB_T-JFizZByNKuVftTdJFmn-G57x09Ik6WqvXjQPQ26iccIKdoNhQ_3btiFSpEk4tG2WpcbrqviCX7htaJIHTsBXR4-tldbwyTKFNmuhyvDcCIfOwJ43Qq0BTpil7C4aUS-69JyZXUbvc9FCp4DKaC5765HXm4Zc4EF93dsWiL4oI7zsoh5ObeLT56NJR_DyXTgy8dDsCcscNST5-EBWGQbsXl69pKqcqjQM0MtPT4LcB6FzQo0Z4vqbzXo8s8GL8kp5w98ngnctpqRfpcRlkapfiYvmHnkiAJizv8VouplQQcTH6yXkr_VLiAIqD93PUW0e3Do4s-e6tgUTCM0vJLrVgzMgWoIp5atCf-eSpU11vg7GGVNM_xDpJFxdr6zf9JSqRUb_jB2T4JCQ0Yf4FloFkn0FuFIh_hAT_YCfiRr2_x1EYuM2rLc62M47FtHzXcMkJA7YMauj10HqEvf95hdQAMF1Y5ENBP-o6TP1M7D7wM-uAalE6J1sASq6ZUw=w1920-h863" alt="Burberry Logo" width={50} height={50} />
         </header>
         <section id="full-height-section">
-          <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg m-3">
-            <div class="flex overflow-hidden">
-              <div id="productImage" class="w-1/2 bg-cover"></div>
-              <div class="w-1/2 p-4">
-                <h1 class="text-gray-900 font-bold text-3xl mb-1">Short Check Collar Gabardine Trench Coat</h1>
+          <div class="product-card bg-white rounded-lg shadow-lg m-3">
+            <div class="w-full h-60 md:flex">
+              <div id="productImage" class="w-full md:w-1/2 bg-cover bg-center"></div>
+              <div class="w-full md:w-1/2 p-4">
+                <h1 class="text-gray-900 font-bold text-2xl md:text-3xl mb-1">Short Check Collar Gabardine Trench Coat</h1>
                 <p class="text-gray-700 text-base">Product Details:</p>
                 <table class="table-auto w-full">
                   <thead>
