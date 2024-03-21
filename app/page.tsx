@@ -1,6 +1,3 @@
-import Image from "next/image";
-import React from 'react';
-
 const ProductCard: React.FC = () => {
   const srcDoc: string = `<!DOCTYPE html>
     <html style="height: 100%; overflow-y: auto;">
@@ -9,9 +6,8 @@ const ProductCard: React.FC = () => {
             <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
             <style>
                 body, html {
-                    height: 100vh;
+                    height: 100%;
                     margin: 0;
-                    overflow-y: auto;
                 }
                 #root {
                     display: flex;
@@ -31,11 +27,14 @@ const ProductCard: React.FC = () => {
                     flex: 1;
                     overflow-y: auto;
                 }
+                .product-content table {
+                    width: 100%;
+                }
             </style>
         </head>
         <body class="bg-gray-200" style="height: 100%; overflow-y: auto;">
-            <div id="root">
-                <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg">
+            <div id="root" class="h-full">
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg h-full">
                     <header class="w-full p-4 bg-white flex justify-center items-center shadow-md">
                         <img id="logo" class="h-10" src="https://source.unsplash.com/random/?burberry" />
                     </header>
@@ -45,7 +44,7 @@ const ProductCard: React.FC = () => {
                             <div class="w-1/2 p-4">
                                 <h1 class="text-gray-900 font-bold text-3xl mb-1">Product Name</h1>
                                 <p class="text-gray-700 text-base">Product Details:</p>
-                                <table class="table-auto w-full">
+                                <table class="table-auto">
                                     <thead>
                                         <tr>
                                             <th class="px-4 py-2">Materials</th>
@@ -91,11 +90,4 @@ const ProductCard: React.FC = () => {
     </html>`;
 
   return <iframe style={{ width: "100%", height: "100%", border: "none" }} srcDoc={srcDoc} />;
-}
-
-export default function Home() {
-  return (
-    
-    <ProductCard />
-  );
 }
