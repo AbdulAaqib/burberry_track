@@ -1,6 +1,13 @@
+import { useClient } from 'next/amp';
 import { useEffect, useRef, useState } from 'react';
 
 export default function Home() {
+  const client = useClient();
+  
+  if (!client) {
+    return null; // Render nothing on the server-side
+  }
+
   const [iframeHeight, setIframeHeight] = useState(0);
   const iframeRef = useRef(null);
 
@@ -44,7 +51,7 @@ export default function Home() {
       </head>
       <body class="bg-gray-200">
         <header class="w-full p-4 bg-white flex justify-center items-center shadow-md">
-          <img class="h-10" src="https://lh3.googleusercontent.com/fife/ALs6j_Hol2Y3jv1Ke2KdpmZd84PcC1p7MomzK8kY3sWTlATjpV3ycNEwbyFmrzPs1GnczLGlq3QiIg6rVvKfSp64HuXyjaKrhcYKd6o-yJpX3dTq31IdcqwWMyPWRr8UYbG7oNyHDm_Zyu1--y-bMI4iRw70yyKPimQ1Dssfmjr52FcGAEpg6izEBWJ-086jl9ALzDcfXDNiUBGf176VaM7NV-ODpimFu2yLS_ZmfSSAdmT15EU2nitPSODIIaMx2QXshLlcPD-VGYmcxtxDjQP_06tdH4sobt6OokznoCyea56ctCoy-BrWumgtQygJfpfVdaZE-KCTnGDOQL02GwgGhLBAoqaOMw8lI3WiRQOV8C1JCMbYceBXN9TAkb-AF97VJb2Qq0wWroJi94z6y_YHRf5--Gkue86kPvNNLuD3T6AGzPSWdcaFOk0m-oKzmrkC46wQaH26XT8VEISZF4dLCkvtqof6_tWC2OejNdNtB_T-JFizZByNKuVftTdJFmn-G57x09Ik6WqvXjQPQ26iccIKdoNhQ_3btiFSpEk4tG2WpcbrqviCX7htaJIHTsBXR4-tldbwyTKFNmuhyvDcCIfOwJ43Qq0BTpil7C4aUS-69JyZXUbvc9FCp4DKaC5765HXm4Zc4EF93dsWiL4oI7zsoh5ObeLT56NJR_DyXTgy8dDsCcscNST5-EBWGQbsXl69pKqcqjQM0MtPT4LcB6FzQo0Z4vqbzXo8s8GL8kp5w98ngnctpqRfpcRlkapfiYvmHnkiAJizv8VouplQQcTH6yXkr_VLiAIqD93PUW0e3Do4s-e6tgUTCM0vJLrVgzMgWoIp5atCf-eSpU11vg7GGVNM_xDpJFxdr6zf9JSqRUb_jB2T4JCQ0Yf4FloFkn0FuFIh_hAT_YCfiRr2_x1EYuM2rLc62M47FtHzXcMkJA7YMauj10HqEvf95hdQAMF1Y5ENBP-o6TP1M7D7wM-uAalE6J1sASq6ZUw=w1920-h863" alt="Burberry Logo" width={100} height={100} />
+          <img class="h-10" src="https://source.unsplash.com/random/?burberry" alt="Burberry Logo" width={100} height={100} />
         </header>
         <section id="full-height-section">
           <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg m-3">
@@ -97,4 +104,3 @@ export default function Home() {
     </html>`;
 
   return <iframe ref={iframeRef} style={{ width: "100%", height: `${iframeHeight}px`, border: "none" }} srcDoc={srcDoc} />;
-}
